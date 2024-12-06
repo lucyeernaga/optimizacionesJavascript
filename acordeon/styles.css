@@ -1,15 +1,24 @@
-.acordeon {
 
+
+.acordeon {
+    width: 90%;
+    max-width: 120em;
+    padding: 2em;
+    @include neo( 1, 1em , 1em );
 }
 
 .acordeon__bloque {
-
+    margin: 0 0 1em;
+    padding: 1em;
+    @include neo( 1, 1em , 1em );
 }
 
 .acordeon__h2 {
-
+    margin: 0 0 1em;
+    padding: 1em;
+    @include neo( 1, 1em , 1em );
 }
 
 .acordeon__contenido {
-    
+    padding: 1em;
 }
