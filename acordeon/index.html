@@ -8,22 +8,37 @@
 </head>
 <body>
     <div class="acordeon">
-        <div class="acordeon__bloque">
-            <h2 class="acordeon__h2">Indice 0</h2>
-            <p class="acordeon__contenido">Bloque de información 0</p>
+        <div class="bloque">
+            <h2 class="h2">Indice 0</h2>
+            <p class="contenido">Bloque de información 0</p>
         </div>
-        <div class="acordeon__bloque">
-            <h2 class="acordeon__h2">Indice 1</h2>
-            <p class="acordeon__contenido">Bloque de información 1</p>
+        <div class="bloque">
+            <h2 class="h2">Indice 1</h2>
+            <p class="contenido">Bloque de información 1</p>
         </div>
-        <div class="acordeon__bloque">
-            <h2 class="acordeon__h2">Indice 2</h2>
-            <p class="acordeon__contenido">Bloque de información 2</p>
+        <div class="bloque">
+            <h2 class="h2">Indice 2</h2>
+            <p class="contenido">Bloque de información 2</p>
         </div>
-        <div class="acordeon__bloque">
-            <h2 class="acordeon__h2">Indice 3</h2>
-            <p class="acordeon__contenido">Bloque de información 3</p>
+        <div class="bloque">
+            <h2 class="h2">Indice 3</h2>
+            <p class="contenido">Bloque de información 3</p>
         </div>
     </div>
+
+
+    <script>
+        const bloque = document.querySelectorAll('.bloque')
+        const h2 = document.querySelectorAll('.h2')
+
+        // Cuando haga Click en h2, 
+            // Quitar la clase activo de TODOS los bloques
+            // Vamos a añadir la clase activo al BLOQUE con la POSICION del h2
+
+        // Recorrer TODOS los h2
+        h2.forEach( (cadaH2,   i) =>{
+            // Asignado un CLICK
+        })
+    </script>
 </body>
 </html>
