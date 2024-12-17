@@ -1,29 +1,30 @@
-@mixin neo($radius, $color1, $color2) {
-    border-radius: $radius;
-    box-shadow: 0 0 10px $color1, 0 0 20px $color2;
-    background: linear-gradient(to bottom, $color1, $color2);
-}
-
-
 .acordeon {
     width: 90%;
     max-width: 120em;
     padding: 2em;
-    @include neo( 1, 1em , 1em );
+    @include neo ( 1, 1em, 1em);
 }
 
-.acordeon__bloque {
+.acordeon .bloque {
     margin: 0 0 1em;
     padding: 1em;
-    @include neo( 1, 1em , 1em );
+    @include neo ( 1, 1em, 1em);
 }
 
-.acordeon__h2 {
+.acordeon .h2 {
     margin: 0 0 1em;
     padding: 1em;
-    @include neo( 1, 1em , 1em );
+    @include neo ( 1, 1em, 1em);
 }
 
-.acordeon__contenido {
-    padding: 1em;
+.acordeon .contenido {
+    background-color: orange;
+    padding: 0em;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+.acordeon .bloque.activo .contenido {
+    height: 4em;
 }
