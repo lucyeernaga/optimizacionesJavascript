@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acordeon</title>
+
     <style>
         .acordeon {
             border: 1px solid #ccc;
+            width: 90%;
+            max-width: 120em;
+            padding: 2em;
         }
 
         .acordeon-item {
             padding: 5px;
             border-bottom: 1px solid #ccc;
+            margin: 0 0 1em;
+            padding: 1em;
         }
 
         .acordeon-content {
-            display: none;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
         }
 
         .acordeon-header {
-            background-color: lightgreen;
+            margin: 0;
+            padding: 1em;
+            cursor: pointer;
         }
 
-        /* elementos activos */
-        /*  .acordeon-item .active .acordeon-content { } */
+        /* Cuando el bloque esté activo */
         .active .acordeon-content {
-            display: block;
+            max-height: 200px; /* Ajusta esto según el contenido */
         }
 
         .active .acordeon-header {
-            background-color: lightsalmon;
+            background-color: lightgray;
         }
     </style>
 </head>
+
 <body>
     <div class="acordeon">
         <div class="acordeon-item">
@@ -49,38 +61,7 @@
         </div>
     </div>
 
-    <script>
-        // 1. Declarar variables y constantes
-        const headers = document.querySelectorAll(".acordeon-header");
-        const items = document.querySelectorAll(".acordeon-item");
+    <script src="./acordeon.js"></script>
 
-        // 2. Crear funciones y listeners
-
-        // Pasar x todas las cabeceras, agregarles un click y agregar active al que le haga click
-        headers.forEach( (header) => {
-            header.addEventListener("click", () => {
-                // alert("click");
-                const item = header.closest(".acordeon-item"); 
-
-                // quitar el active de todos
-                /// opcional si queremos que se abra uno solo por vez.
-                items.forEach( elemento => {
-                    elemento.classList.remove("active");
-                });
-
-                // agregar el active a item 
-                // toggle es para abrirlos y cerrarlos pq con add solo se abririan y no se podrian cerrar
-                item.classList.toggle("active");
-
-
-            });
-        });
-
-
-        // 3. Ejecutar nuestro programa 
-        // hacer click en el primer elemento.
-        headers[2].click();
-    </script>
-    
 </body>
 </html>
