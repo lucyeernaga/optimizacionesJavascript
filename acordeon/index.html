@@ -3,24 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acordeón Javascript</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./acordeon.js">
+    <title>Acordeon</title>
+    <style>
+        .acordeon {
+            border: 1px solid #ccc;
+        }
+
+        .acordeon-item {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .acordeon-content {
+            display: none;
+        }
+
+        .acordeon-header {
+            background-color: lightgreen;
+        }
+
+        /* elementos activos */
+        /*  .acordeon-item .active .acordeon-content { } */
+        .active .acordeon-content {
+            display: block;
+        }
+
+        .active .acordeon-header {
+            background-color: lightsalmon;
+        }
+    </style>
 </head>
 <body>
     <div class="acordeon">
-        <div class="bloque activo">
-            <h2 class="h2">Titular</h2>
-            <p class="contenido">Soy el contenido 1</p>
+        <div class="acordeon-item">
+            <div class="acordeon-header">Titulo </div>
+            <div class="acordeon-content">Contenido 1</div>
         </div>
-        <div class="bloque">
-            <h2 class="h2">Titular</h2>
-            <p class="contenido">Soy el contenido 2</p>
+        <div class="acordeon-item ">
+            <div class="acordeon-header">Titulo </div>
+            <div class="acordeon-content">Contenido 2</div>
         </div>
-        
+        <div class="acordeon-item ">
+            <div class="acordeon-header ">Titulo </div>
+            <div class="acordeon-content">Contenido 3</div>
+        </div>
     </div>
 
+    <script>
+        // 1. Declarar variables y constantes
+        const headers = document.querySelectorAll(".acordeon-header");
+        const items = document.querySelectorAll(".acordeon-item");
 
+        // 2. Crear funciones y listeners
+
+        // Pasar x todas las cabeceras, agregarles un click y agregar active al que le haga click
+        headers.forEach( (header) => {
+            header.addEventListener("click", () => {
+                // alert("click");
+                const item = header.closest(".acordeon-item"); 
+
+                // quitar el active de todos
+                /// opcional si queremos que se abra uno solo por vez.
+                items.forEach( elemento => {
+                    elemento.classList.remove("active");
+                });
+
+                // agregar el active a item 
+                // toggle es para abrirlos y cerrarlos pq con add solo se abririan y no se podrian cerrar
+                item.classList.toggle("active");
+
+
+            });
+        });
+
+
+        // 3. Ejecutar nuestro programa 
+        // hacer click en el primer elemento.
+        headers[2].click();
     </script>
+    
 </body>
 </html>
